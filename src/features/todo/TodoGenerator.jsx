@@ -4,7 +4,6 @@ import { addTodo } from "./todoSlice";
 import { useDispatch } from "react-redux";
 import { postTodo } from "../apis/todoApi";
 import Button from "antd/lib/button";
-import Input from "antd/lib/input/Input";
 
 function TodoGenerator(props) {
   const [listText, setListText] = useState("");

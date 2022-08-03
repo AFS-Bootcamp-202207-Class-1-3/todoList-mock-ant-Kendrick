@@ -1,21 +1,16 @@
-import { Avatar, Button, List, Skeleton } from "antd";
+import { List, Skeleton } from "antd";
 import "../../css/AntList.css";
 import { addTodos, doneTodo, deleteTodo } from "./todoSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getTodos, putTodo, deleteTodoApi } from "../apis/todoApi";
-import {
-  DeleteOutlined,
-  FormOutlined,
-  CheckOutlined,
-} from "@ant-design/icons";
+import { DeleteOutlined, FormOutlined, CheckOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import AntModal from "./AntModal";
 
-
 function AntList() {
   const [initLoading, setInitLoading] = useState(true);
-//   const [loading, setLoading] = useState(false);
-//   const [data, setData] = useState([]);
+  //   const [loading, setLoading] = useState(false);
+  //   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
   const list = useSelector((state) => state.todo.todos);
@@ -25,7 +20,7 @@ function AntList() {
       dispatch(addTodos(response.data));
       setInitLoading(false);
     });
-  }, []);
+  }, [dispatch]);
 
   const clickHandle = (todo) => {
     putTodo(todo.id, { done: !todo.done }).then((response) => {

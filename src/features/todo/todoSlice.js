@@ -12,14 +12,14 @@ const todoSlice = createSlice({
       state.todos.push(action.payload);
     },
     doneTodo(state, action) {
-      state.todos.map((todo) => {
+      state.todos.forEach((todo) => {
         if (todo.id === action.payload) {
           todo.done = !todo.done;
         }
       });
     },
     changeContextTodo(state, action) {
-      state.todos.map((todo) => {
+      state.todos.forEach((todo) => {
         if (todo.id === action.payload.todo.id) {
           todo.context = action.payload.context;
         }

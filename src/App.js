@@ -5,7 +5,6 @@ import Layout from "./features/layout/Layout";
 import About from "./features/pages/About";
 import DoneList from "./features/pages/DoneList";
 import NotFound from "./features/pages/NotFound";
-import AntDoneList from "./features/todo/AntDoneList";
 
 function App() {
   return (

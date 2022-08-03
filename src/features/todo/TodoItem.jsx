@@ -5,7 +5,7 @@ import { putTodo,deleteTodoApi } from "../apis/todoApi";
 
 
 function TodoItem(props) {
-  const { id, done, todoItemText, index } = props;
+  const { id, done, todoItemText } = props;
 
   const dispatch = useDispatch();
 

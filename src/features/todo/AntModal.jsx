@@ -1,4 +1,4 @@
-import { Button, Modal } from "antd";
+import {  Modal } from "antd";
 import React, { useState } from "react";
 import { EditOutlined } from "@ant-design/icons";
 import { Input } from "antd";
@@ -36,7 +36,7 @@ function AntModal(props) {
 
   return (
     <>
-      <a key="list-loadmore-edit" onClick={showModal}>
+      <a key="list-loadmore-edit"href="/" onClick={showModal}>
         <EditOutlined /> edit
       </a>
       <Modal

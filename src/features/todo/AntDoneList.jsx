@@ -1,4 +1,4 @@
-import { Avatar, Button, List, Skeleton } from "antd";
+import { List, Skeleton } from "antd";
 import "../../css/AntList.css";
 import { addTodos, doneTodo, deleteTodo } from "./todoSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,13 +10,10 @@ import {
   CheckOutlined,
 } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
-const count = 3;
-const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat,picture&noinfo`;
 
 function AntDoneList() {
   const [initLoading, setInitLoading] = useState(true);
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState([]);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
