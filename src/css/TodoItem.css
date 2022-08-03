@@ -1,0 +1,25 @@
+.todo-item {
+  border: 1px solid #a9a9a9;
+  line-height: 40px;
+  width: 100%;
+  margin: 5px;
+  text-align: left;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+}
+
+.no-done-text {
+  text-decoration: none;
+}
+
+.done-text {
+  text-decoration: line-through;
+}

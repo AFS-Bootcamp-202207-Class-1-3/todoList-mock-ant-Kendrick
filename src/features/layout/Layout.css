@@ -1,0 +1,23 @@
+.content{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.layout{
+    display: flex;
+    flex-flow: column;
+    /* background-color: black; */
+    text-align: center;
+}
+
+.nav-cont{
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    margin-bottom: 50px;
+}
+
+.con{
+    /* background-color: blue; */
+}

@@ -1,0 +1,8 @@
+.todo-group {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 600px;
+  padding: 10px;
+
+}
