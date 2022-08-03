@@ -4,7 +4,6 @@ import { addTodos, doneTodo, deleteTodo } from "./todoSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getTodos, putTodo, deleteTodoApi } from "../apis/todoApi";
 import {
-  HomeOutlined,
   EditOutlined,
   DeleteOutlined,
   FormOutlined,
@@ -25,15 +24,13 @@ function AntDoneList() {
       dispatch(addTodos(response.data));
       setInitLoading(false);
     });
-  }, []);
+  }, [dispatch]);
 
   const list = useSelector((state) => state.todo.todos).filter((todo) => {
     return todo.done === true;
   });
-  console.log(list);
 
   const clickHandle = (todo) => {
-    console.log(todo);
     putTodo(todo.id, { done: !todo.done }).then((response) => {
       dispatch(doneTodo(todo.id));
     });
@@ -71,7 +68,6 @@ function AntDoneList() {
               avatar={item.done ? <CheckOutlined /> : <FormOutlined />}
               title={<a onClick={() => clickHandle(item)}>{item.context}</a>}
             />
-            
           </Skeleton>
         </List.Item>
       )}

@@ -14,7 +14,8 @@
 .nav-cont{
     display: flex;
     justify-content: center;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
+    color: #d7d8d9;
     margin-bottom: 50px;
 }
 

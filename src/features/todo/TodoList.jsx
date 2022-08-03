@@ -1,5 +1,3 @@
-import TodoGenerator from "./TodoGenerator";
-import TodoGroup from "./TodoGroup";
 import "../../css/TodoList.css";
 import { useEffect } from "react";
 import { getTodos } from "../apis/todoApi";
@@ -7,10 +5,7 @@ import { useDispatch } from "react-redux";
 import { addTodos } from "./todoSlice";
 import AntList from "./AntList";
 import Input from "antd/lib/input/Input";
-import Button from "antd/lib/button";
 import AntInput from "./AntInput";
-
-
 
 function TodoList() {
   const dispatch = useDispatch();
@@ -27,9 +22,7 @@ function TodoList() {
   return (
     <div className="todo-list">
       <span>todoList</span>
-      {/* <TodoGroup /> */}
       <AntList />
-      {/* <TodoGenerator /> */}
       <AntInput />
     </div>
   );

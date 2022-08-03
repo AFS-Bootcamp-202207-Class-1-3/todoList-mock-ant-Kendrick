@@ -1,18 +1,28 @@
 import { Button, Modal } from "antd";
 import React, { useState } from "react";
 import { EditOutlined } from "@ant-design/icons";
-import { Input } from 'antd';
-
+import { Input } from "antd";
+import { putTodo } from "../apis/todoApi";
+import { useDispatch } from "react-redux";
+import { changeContextTodo } from "../../features/todo/todoSlice";
 
 function AntModal(props) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const { todo } = props;
+  const [text, settext] = useState(todo.context);
+  const dispatch = useDispatch();
 
   const showModal = () => {
     setIsModalVisible(true);
   };
 
   const handleOk = () => {
+    putTodo(todo.id, { context: text }).then((response) => {
+      console.log(todo);
+      console.log(text);
+      console.log(response);
+      dispatch(changeContextTodo({ todo: todo, context: text }));
+    });
     setIsModalVisible(false);
   };
 
@@ -20,10 +30,14 @@ function AntModal(props) {
     setIsModalVisible(false);
   };
 
+  const inputChange = (event) => {
+    settext(event.target.value);
+  };
+
   return (
     <>
       <a key="list-loadmore-edit" onClick={showModal}>
-        <EditOutlined /> edit 
+        <EditOutlined /> edit
       </a>
       <Modal
         title="修改TODO"
@@ -33,8 +47,7 @@ function AntModal(props) {
         okText={"修改"}
         cancelText={"算了算了"}
       >
-        <Input placeholder="Basic usage" value={todo.context}/>
-        
+        <Input placeholder="Basic usage" value={text} onChange={inputChange} />
       </Modal>
     </>
   );
