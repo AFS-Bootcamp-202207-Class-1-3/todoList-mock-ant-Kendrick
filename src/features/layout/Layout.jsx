@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import "./Layout.css";
+import AntMenu from "../todo/AntMenu";
 //Outlet理解成站位符
 
 function Layout() {
@@ -9,10 +10,11 @@ function Layout() {
       <div className="nav-cont">
         <div className="con">
         {/* <AntBreadCru /> */}
+        {/* <AntMenu /> */}
           <nav>
-            <Link to="/">home</Link>&emsp;/
-            <Link to="/about">about</Link>&emsp;/
-            <Link to="/done">done</Link>&emsp;
+            <Link to="/">HOME</Link>&emsp;
+            <Link to="/done">DONE</Link>&emsp;
+            <Link to="/about">ABOUT</Link>&emsp;
           </nav>
         </div>
       </div>

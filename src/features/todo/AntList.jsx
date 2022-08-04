@@ -3,7 +3,7 @@ import "../../css/AntList.css";
 import { addTodos, doneTodo, deleteTodo } from "./todoSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getTodos, putTodo, deleteTodoApi } from "../apis/todoApi";
-import { DeleteOutlined, FormOutlined, CheckOutlined } from "@ant-design/icons";
+import { DeleteOutlined, SnippetsOutlined  , CheckOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import AntModal from "./AntModal";
 
@@ -57,7 +57,7 @@ function AntList() {
         >
           <Skeleton avatar title={false} loading={item.loading} active>
             <List.Item.Meta
-              avatar={item.done ? <CheckOutlined /> : <FormOutlined />}
+              avatar={item.done ? <CheckOutlined /> : <SnippetsOutlined />}
               title={<a onClick={() => clickHandle(item)}>{item.context}</a>}
             />
           </Skeleton>

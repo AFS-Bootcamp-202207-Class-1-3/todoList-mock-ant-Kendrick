@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addTodos } from "./todoSlice";
 import AntList from "./AntList";
 import AntInput from "./AntInput";
+import AntMenu from "./AntMenu";
 
 function TodoList() {
   const dispatch = useDispatch();
@@ -17,9 +18,9 @@ function TodoList() {
 
   return (
     <div className="todo-list">
-      <span>todoList</span>
-      <AntList />
+      <h3>todoList</h3>
       <AntInput />
+      <AntList />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 function About(){
     return (
-        <div>about div</div>
+        <div><h1>about todoList</h1></div>
     );
 }
 

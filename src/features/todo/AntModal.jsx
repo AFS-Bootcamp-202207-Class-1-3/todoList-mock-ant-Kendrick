@@ -18,10 +18,7 @@ function AntModal(props) {
 
   const handleOk = () => {
     putTodo(todo.id, { context: text }).then((response) => {
-      console.log(todo);
-      console.log(text);
-      console.log(response);
-      dispatch(changeContextTodo({ todo: todo, context: text }));
+      dispatch(changeContextTodo({ todo: todo, context: response.data.context }));
     });
     setIsModalVisible(false);
   };
@@ -36,7 +33,7 @@ function AntModal(props) {
 
   return (
     <>
-      <a key="list-loadmore-edit"href="/" onClick={showModal}>
+      <a key="list-loadmore-edit" onClick={showModal}>
         <EditOutlined /> edit
       </a>
       <Modal
