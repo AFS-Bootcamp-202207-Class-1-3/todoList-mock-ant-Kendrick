@@ -23,7 +23,7 @@ function AntList() {
   }, [dispatch]);
 
   const clickHandle = (todo) => {
-    putTodo(todo.id, { done: !todo.done }).then((response) => {
+    putTodo(todo.id, { done: !todo.done,context: todo.context }).then((response) => {
       dispatch(doneTodo(todo.id));
     });
   };
